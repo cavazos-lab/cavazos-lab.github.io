@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="description" content="PolyBench/ACC">
+  <meta name="keywords" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>The Similarity Graph</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/icomoon.css" rel="stylesheet">
+  <link href="css/scrolling-nav.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="anim">
+	  <!-- CONFIGURE css/custom.css to point to the right image -->
+	  <a href="#intro" class="page-scroll">
+            <span class="navbar-brand page-scroll"><span id="headerimg"></span></span>
+            <span class="navbar-brand page-scroll"><span class="page-scroll text-primary">The Similarity Graph</span></span>
+	  </a>
+        </div>
+      </div>
+      <div class="navbar-collapse navbar-ex1-collapse collapse anim" style="height: 1px;">
+        <ul class="nav navbar-nav">
+          <li class="hidden active">
+            <a class="page-scroll" href="#page-top"></a>
+          </li>
+          <li class="">
+            <a class="page-scroll" href="#contributors"><span>&nbsp;Contributors</span></a>
+          </li>
+          <li class="">
+            <a class="page-scroll" href="#acknowledgements"><span>&nbsp;Acknowledgements</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section id="intro" class="section intro-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+	  <h1><small>A Framework For Analyzing Database Access Patterns Within A Company</small></h1>
+          <p class="lead"> We have developed a framework for analyzing database access patterns within a company based on the SQL queries the company's employees submit. Specifically, our goal is to uncover similarities between analysts that were previously unknown. This can lead to new collaborations within the company, as well as provide management with a tool to help maximize workforce efficiency.</p>
+	  <h3>Components and Features:</h3>
+          <ul>
+            <li>A parser - takes a dataset of SQL queries and creates a global alphabet based on tokens found within the queries.</li>
+	    <li>An encoding process - represents SQL queries as ordered trees and labels nodes according to their entry in the global alphabet.</li>
+            <li>Fast Subtree Kernel - A graph kernel we created to calculate the pairwise similarity of ordered trees.</li>
+            <li>User Similarity Algorithm - takes collections of queries submitted by pairs of users and uses the Fast Subtree Kernel to compute the overall similarity between the users in question.</li>
+            <li>Visualization - a series of visualizations of our data created using open-source visualization tools.</li>
+          </ul>
+	</div>
+      </div>
+      <div class="row">
+	<h3 class="text-center">Pipeline</h3>
+	<img id="pipeline" src="img/System_Pipeline.jpg" style="width:100%;max-width:1200px;">
+      </div>
+    </div>
+  </section>
+  
+  <section id="contributors" class="section contributors-sections">
+    <div class="container">
+      <h1 class="text-center text-primary">Contributors</h1>
+      <div class="row">
+	<div class="col-xs-12 col-sm-6">
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <strong>Related Research</strong>
+	    </div>
+	    <div class="panel-body">
+	      <p>Any work that uses these codes should cite the following paper:</p>
+              <p>R. Searles, W. Wang, L. Xu, W. Killian, J. Cavazos. <em>&quot;The Similarity Graph: Analyzing Database Access Patterns Within A Company.&quot;</em> </p>
+	      <p><b>Abstract:</b><br>A company’s database can reveal a lot about its employees, and that information can be used to manage the workforce, assign tasks, and create collaborations more effec- tively. This paper proposes a framework to build a similarity graph between analysts within a company using the SQL queries they write. We show how we can represent SQL queries in graph form, and we propose a method that can be used for calculating pairwise similarity on these graphs. In order to guarantee that this method will scale to large systems, we accelerated our algorithm using OpenMP. The results we obtained revealed many behavioral similarities between employees from different business units within the company, and we achieved an almost linear speedup, with a minimum of 75% efficiency across all cores.</p>
+	    </div>
+	    <div class="panel-footer">
+	      <div class="text-center">
+		<div class="btn-group">
+		  <a role="button" class="btn btn-default" href="resources/Similarity.Graph.Written.Report.pdf">Paper</a>
+		  <a role="button" class="btn btn-default" href="resources/Similarity.Graph.Presentation.pdf">Presentation</a>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <strong>Individuals</strong>
+	    </div>
+	    <ul class="list-group">
+	      <li class="list-group-item"><a href="https://www.eecis.udel.edu/~cavazos">John Cavazos</a>, Principle Investigator</li>
+              <li class="list-group-item"><a href="https://www.eecis.udel.edu/~searles">Robert Searles</a></li>
+              <li class="list-group-item"><a href="https://www.eecis.udel.edu/~wwang">Wei Wang</a></li>
+	      <li class="list-group-item"><a href="https://www.eecis.udel.edu/~lxu">Lifan Xu</a></li>
+              <li class="list-group-item"><a href="https://www.eecis.udel.edu/~wkillian">William Killian</a></li>
+	    </ul>
+	  </div>
+	</div>
+      </div>
+    </div>
+  </section>
+  <section id="acknowledgements" class="section acknowledgement-section">
+    <div class="container">
+      <h1 class="text-center text-primary">Acknowledgements</h1>
+      <div class="row">
+	<div class="text-center col-xs-12">
+	  <div class="row">
+	    <img id="jpmc" src="img/jpmorgan-chase-co-logo.png" style="width:100%;max-width:480px;">
+	    <p>This work was funded in part by JPMorgan Chase & Co.</p>
+	    <p>&copy; 2012-2014 University of Delaware</p>
+	  </div>
+	</div>
+      </div>
+  </section>
+  <section id="footer" class="section footer-section">
+    <div class="container">
+      <div class="row">
+	<div class="col-xs-12">
+	  <p class="lead text-center text-uppercase">&copy;2014 University of Delaware</p>
+	</div>
+      </div>
+      <div class="row">
+	<div class="col-sm-6 col-xs-12">
+	  <p class="small text-center text-uppercase">Powered by <a href="//www.getbootstrap.com">Bootstrap</a></p>
+	</div>
+	<div class="col-sm-6 col-xs-12">
+	  <p class="small text-center text-uppercase">Icons by <a href="//glyphicons.com">Glyphicons</a>.</p>
+	</div>
+    </div>
+  </section>
+  <script src="js/jquery-1.11.0.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/scrolling-nav.js"></script>
+</body>
+</html>
